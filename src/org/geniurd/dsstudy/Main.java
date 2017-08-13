@@ -2,21 +2,20 @@ package org.geniurd.dsstudy;
 
 import org.geniurd.dsstudy.number.AddTwoNumbers;
 
-import java.util.LinkedList;
-
 public class Main {
 	public static void main(String[] args) {
-		LinkedList<Integer> a = new LinkedList<Integer>();
-		LinkedList<Integer> b = new LinkedList<Integer>();
+		ListNode a = new ListNode(2);
+		a.next = new ListNode(4);
+		a.next.next = new ListNode(3);
 
-		a.add(2);
-		a.add(4);
-		a.add(3);
-		b.add(5);
-		b.add(6);
-		b.add(4);
+		ListNode b = new ListNode(5);
+		b.next = new ListNode(6);
+		b.next.next = new ListNode(4);
 
-		LinkedList<Integer> result = AddTwoNumbers.add(a, b);
-		System.out.println(result.toString());
+		ListNode sum = new AddTwoNumbers().addTwoNumbers(a, b);
+
+		a.print();
+		b.print();
+		sum.print();
 	}
 }
